@@ -1,0 +1,63 @@
+﻿@model WebCoreTemplate.Models.Databases.MGS.barang
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>barang</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="kode_barang" class="control-label"></label>
+                <input asp-for="kode_barang" class="form-control" />
+                <span asp-validation-for="kode_barang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nama_barang" class="control-label"></label>
+                <input asp-for="nama_barang" class="form-control" />
+                <span asp-validation-for="nama_barang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="harga_beli" class="control-label"></label>
+                <input asp-for="harga_beli" class="form-control" />
+                <span asp-validation-for="harga_beli" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="harga_jual" class="control-label"></label>
+                <input asp-for="harga_jual" class="form-control" />
+                <span asp-validation-for="harga_jual" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tipe" class="control-label"></label>
+                <input asp-for="tipe" class="form-control" />
+                <span asp-validation-for="tipe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="created_by" class="control-label"></label>
+                <input asp-for="created_by" class="form-control" />
+                <span asp-validation-for="created_by" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="created_date" class="control-label"></label>
+                <input asp-for="created_date" class="form-control" />
+                <span asp-validation-for="created_date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-md-4">Customer</div>
+    <div class="col-md-8">
+        <select class="input-group" id="costumerid">
+            <option value="">[Pilih]</option>
+            @foreach(var item in ViewBag.listcustomer)
+            {
+                <option value="@item.CustomerID">@item.CompanyName</option>
+            }
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">Tanggal Wajib</div>
+    <div class="col-md-8"><input class="input-group" type="date" name="" id="requireddate"></div>
+</div>
+<div class="row">
+    <div class="col-md-4">Tanggal Pengiriman</div>
+    <div class="col-md-8"><input class="input-group" type="date" name="" id="shipdate"></div>
+</div>
+<div class="row">
+    <div class="col-md-4">Kargo</div>
+    <div class="col-md-8"><input class="input-group" type="number" name="" id="freight"></div>
+</div>
+<div class="row">
+    <div class="col-md-4">Kapal Pengirim</div>
+    <div class="col-md-8"><input class="input-group" type="text" name="" id="shipname"></div>
+</div>
+<div class="row">
+    <div class="col-md-4">Alamat</div>
+    <div class="col-md-8"><input class="input-group" type="text" name="" id="shipaddress"></div>
+</div>
+<div class="row">
+    <div class="col-md-4">Negara</div>
+    <div class="col-md-8"><input class="input-group" type="text" name="" id="shipcountry"></div>
+</div>
+<div class="row">
+    <div class="col-md-4">Kota</div>
+    <div class="col-md-8"><input class="input-group" type="text" name="" id="shipcity"></div>
+</div>
+<div class="row">
+    <div class="col-md-4">Provinsi</div>
+    <div class="col-md-8"><input class="input-group" type="text" name="" id="shipregion"></div>
+</div>
+<div class="row">
+    <div class="col-md-4">Kode Pos</div>
+    <div class="col-md-8"><input class="input-group" type="text" name="" id="shippostalcode"></div>
+</div>

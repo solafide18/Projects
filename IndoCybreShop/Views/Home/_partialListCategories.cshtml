@@ -1,0 +1,25 @@
+<div class="sidebar-shop-item">
+    <ul>
+        <li>
+            @if(ViewBag.MenuActive == 0)
+            {
+                <a class="active" href="javascript:loadCategories(0)">All</a>
+            }
+            else{
+                <a class="" href="javascript:loadCategories(0)">All</a>
+            }
+        </li>
+        @foreach (var item in ViewBag.categories)
+        {
+            <li>
+                @if(ViewBag.MenuActive == item.CategoryID)
+                {
+                    <a class="active" href="javascript:loadCategories(@item.CategoryID)">@item.CategoryName</a>
+                }
+                else{
+                    <a class="" href="javascript:loadCategories(@item.CategoryID)">@item.CategoryName</a>
+                }
+            </li>
+        }
+    </ul>
+</div>

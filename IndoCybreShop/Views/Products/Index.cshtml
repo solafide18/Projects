@@ -1,0 +1,172 @@
+@model IEnumerable<IndoCybreShop.Models.TestCandidate.Products>
+<div style="overflow: auto;margin-top: 50px;">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <b>Table List Product</b>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="w3-container list-cart-item">
+                <div class="row">
+                    <div class="col">
+                        <button id="addPrd" onclick="addproduct(this)" class="btn btn-warning">Add</button>
+                        <button id="savePrd" onclick="saveproduct(this)" class="btn btn-success" style="display: none;">Save</button>
+                        <button id="cancelPrd" onclick="cancelproduct(this)" class="btn btn-danger" style="display: none;">Cancel</button>
+                    </div>
+                </div>
+                <table class="w3-table-all w3-hoverable">
+                    <thead>
+                        <tr class="w3-light-grey">
+                            <th>ProductID</th>
+                            <th>ProductName</th>
+                            <th>CategoryID</th>
+                            <th>QuantityPerUnit</th>
+                            <th>UnitPrice</th>
+                            <th>UnitsInStock</th>
+                            <th>UnitsOnOrder</th>
+                            <th>ReorderLevel</th>
+                            <th>Discontinued</th>
+                        </tr>
+                    </thead>
+                    <tbody id="list-transaksi">
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.ProductID</td>
+                                <td>@item.ProductName</td>
+                                <td>@item.CategoryID</td>
+                                <td>@item.QuantityPerUnit</td>
+                                <td>@item.UnitPrice</td>
+                                <td>@item.UnitsInStock</td>
+                                <td>@item.UnitsOnOrder</td>
+                                <td>@item.ReorderLevel</td>
+                                <td>@item.Discontinued</td>
+                            </tr>   
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalDetails" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document" style="width: 80%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Konfirmasi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="form-konfirmasi">
+                    <div class="container">
+                        <div id="tbl-detail-div"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var modalDetails = $("#modalDetails");
+    function details(id)
+    {
+        
+        $.ajax({
+            url: '@Url.Action("LoadDetails","Transaksi")/' + id,
+            type: "get",
+            dataType: "html",
+            success: function (result) {
+                modalDetails.modal("show");
+                $("#tbl-detail-div").html(result);
+            }
+        });
+    }
+
+    function addproduct(e)
+    {
+        $("#addPrd").hide();
+        $("#savePrd").show();
+        $("#cancelPrd").show();
+        var strhtml = '<tr id="rowtoadd">'+'<td><input id="ProductID" type="number" disabled></td>'+
+            '<td><input id="ProductName" type="text"></td>'+
+            '<td><input id="CategoryID" type="number"></td>'+
+            '<td><input id="QuantityPerUnit" type="number"></td>'+
+            '<td><input id="UnitPrice" type="number"></td>'+
+            '<td><input id="UnitsInStock" type="number"></td>'+
+            '<td><input id="UnitsOnOrder" type="tnumberext"></td>'+
+            '<td><input id="ReorderLevel" type="number"></td>'+
+            '<td><input id="Discontinued" type="checkbox"></td>'+
+            '</tr>';
+        $("#list-transaksi").prepend(strhtml);
+    }
+
+    function saveproduct(e)
+    {
+        var ProductID=$("tr #ProductID").val(),
+        ProductName=$("tr #ProductName").val(),
+        CategoryID=$("tr #CategoryID").val(),
+        QuantityPerUnit=$("tr #QuantityPerUnit").val(),
+        UnitPrice=$("tr #UnitPrice").val(),
+        UnitsInStock=$("tr #UnitsInStock").val(),
+        UnitsOnOrder=$("tr #UnitsOnOrder").val(),
+        ReorderLevel=$("tr #ReorderLevel").val(),
+        Discontinued=$("tr #Discontinued").prop("checked");
+        debugger;
+        var req = {
+            ProductID:ProductID,
+            ProductName:ProductName,
+            CategoryID:CategoryID,
+            QuantityPerUnit:QuantityPerUnit,
+            UnitPrice:UnitPrice,
+            UnitsInStock:UnitsInStock,
+            UnitsOnOrder:UnitsOnOrder,
+            ReorderLevel:ReorderLevel,
+            Discontinued:Discontinued,
+        }
+        console.log(req);
+        $.ajax({
+            type: 'POST',
+            url: '@Url.Action("AddProduct","Products")',
+            data: JSON.stringify(req),
+            contentType: "application/json",
+            success: function (result) {
+                if(result.status)
+                {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: result.remarks,
+                    }).then(function(){
+                        window.location.reload();
+                    });
+                }
+                else{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: result.remarks,
+                    })
+                }
+            }
+        });
+        $("#addPrd").show();
+        $("#savePrd").hide();
+        $("#cancelPrd").hide();
+        $("#rowtoadd").remove();
+    }
+
+    function cancelproduct(e)
+    {
+        $("#addPrd").show();
+        $("#savePrd").hide();
+        $("#cancelPrd").hide();
+        $("#rowtoadd").remove();
+    }
+</script>

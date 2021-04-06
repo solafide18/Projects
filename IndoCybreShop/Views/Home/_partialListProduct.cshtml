@@ -1,0 +1,35 @@
+@if(Enumerable.Count(ViewBag.products)>0){
+    int i=0;
+    int result;
+    bool new_row=true;
+    foreach (var item in ViewBag.products)
+    {
+        result = i%3;
+        if(new_row)
+        {
+            @Html.Raw("<div class='row'>")
+            new_row=false;
+        }
+        <div class="col-md-4">
+            <div class="shop-item">
+                <div class="card" style="width: 100%;">
+                    <img src="https://placehold.it/260x180" class="card-img-top" alt="@item.ProductName">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.ProductName</h5>
+                        <p class="card-text">@Convert.ToInt64(item.UnitPrice)</p>
+                        <button onclick="addProduct(this)" prodctId="@item.ProductID" nameProduct="@item.ProductName" class="btn btn-success"><i class="fas fa-cart-plus"></i> Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        if(result==2 || i+1==Enumerable.Count(ViewBag.products))
+        {
+            @Html.Raw("</div>")
+            new_row=true;
+        }
+        i++;
+    }
+}
+else{
+    <center>No Item</center>
+}

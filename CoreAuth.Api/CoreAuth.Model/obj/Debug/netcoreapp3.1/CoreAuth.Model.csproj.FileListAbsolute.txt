@@ -1,0 +1,9 @@
+C:\Projects\CoreAuth.Api\CoreAuth.Model\bin\Debug\netcoreapp3.1\CoreAuth.Model.deps.json
+C:\Projects\CoreAuth.Api\CoreAuth.Model\bin\Debug\netcoreapp3.1\CoreAuth.Model.dll
+C:\Projects\CoreAuth.Api\CoreAuth.Model\bin\Debug\netcoreapp3.1\CoreAuth.Model.pdb
+C:\Projects\CoreAuth.Api\CoreAuth.Model\obj\Debug\netcoreapp3.1\CoreAuth.Model.csprojAssemblyReference.cache
+C:\Projects\CoreAuth.Api\CoreAuth.Model\obj\Debug\netcoreapp3.1\CoreAuth.Model.AssemblyInfoInputs.cache
+C:\Projects\CoreAuth.Api\CoreAuth.Model\obj\Debug\netcoreapp3.1\CoreAuth.Model.AssemblyInfo.cs
+C:\Projects\CoreAuth.Api\CoreAuth.Model\obj\Debug\netcoreapp3.1\CoreAuth.Model.csproj.CoreCompileInputs.cache
+C:\Projects\CoreAuth.Api\CoreAuth.Model\obj\Debug\netcoreapp3.1\CoreAuth.Model.dll
+C:\Projects\CoreAuth.Api\CoreAuth.Model\obj\Debug\netcoreapp3.1\CoreAuth.Model.pdb

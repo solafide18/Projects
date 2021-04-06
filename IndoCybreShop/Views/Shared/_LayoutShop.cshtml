@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>IndoCybre Shop</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/lib/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script type="text/javascript" src="~/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="~/js/popper.min.js"></script>
+    <script type="text/javascript" src="~/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/js/sweetalert2.all.min.js"></script>
+    <!-- <script type="text/javascript" src="~/js/promise-polyfill.js"></script> -->
+    <style>
+        .nav-item{
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href='@Url.Action("Index","Home")'>IndoCybre Shop</a>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href='@Url.Action("Index","Categories")'><i class="fas fa-list-ul"></i> List Categories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href='@Url.Action("Index","Products")'><i class="fas fa-list-ul"></i> List Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href='@Url.Action("Index","Customers")'><i class="fas fa-list-ul"></i> list Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href='@Url.Action("Index","Transaksi")'><i class="fas fa-list-ul"></i> List Transaksi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#cart-shop-indocybre"><i class="fas fa-shopping-cart"></i> Cart</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container" style="margin-bottom:100px;">
+        @RenderBody()
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+</body>
+
+</html>

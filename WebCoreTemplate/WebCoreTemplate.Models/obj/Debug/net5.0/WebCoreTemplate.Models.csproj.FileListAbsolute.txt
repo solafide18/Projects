@@ -1,0 +1,12 @@
+C:\Projects\WebCoreTemplate\WebCoreTemplate.Models\bin\Debug\net5.0\WebCoreTemplate.Models.deps.json
+C:\Projects\WebCoreTemplate\WebCoreTemplate.Models\bin\Debug\net5.0\WebCoreTemplate.Models.dll
+C:\Projects\WebCoreTemplate\WebCoreTemplate.Models\bin\Debug\net5.0\ref\WebCoreTemplate.Models.dll
+C:\Projects\WebCoreTemplate\WebCoreTemplate.Models\bin\Debug\net5.0\WebCoreTemplate.Models.pdb
+C:\Projects\WebCoreTemplate\WebCoreTemplate.Models\obj\Debug\net5.0\WebCoreTemplate.Models.csprojAssemblyReference.cache
+C:\Projects\WebCoreTemplate\WebCoreTemplate.Models\obj\Debug\net5.0\WebCoreTemplate.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\WebCoreTemplate\WebCoreTemplate.Models\obj\Debug\net5.0\WebCoreTemplate.Models.AssemblyInfoInputs.cache
+C:\Projects\WebCoreTemplate\WebCoreTemplate.Models\obj\Debug\net5.0\WebCoreTemplate.Models.AssemblyInfo.cs
+C:\Projects\WebCoreTemplate\WebCoreTemplate.Models\obj\Debug\net5.0\WebCoreTemplate.Models.csproj.CoreCompileInputs.cache
+C:\Projects\WebCoreTemplate\WebCoreTemplate.Models\obj\Debug\net5.0\WebCoreTemplate.Models.dll
+C:\Projects\WebCoreTemplate\WebCoreTemplate.Models\obj\Debug\net5.0\ref\WebCoreTemplate.Models.dll
+C:\Projects\WebCoreTemplate\WebCoreTemplate.Models\obj\Debug\net5.0\WebCoreTemplate.Models.pdb

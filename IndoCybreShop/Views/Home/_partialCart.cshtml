@@ -1,0 +1,29 @@
+
+@foreach(var item in ViewBag.cart)
+{
+    <tr class="prd-item-cart" id='@("prd"+item.ProductID)' prdid="@item.ProductID">
+        <td>
+            <span id='@("prdname"+item.ProductID)'>@item.ProductName</span>
+        </td>
+        <td>
+            <span id='@("prdprice"+item.ProductID)'>@item.UnitPrice</span>
+        </td>
+        <td>
+            <span id='@("count"+item.ProductID)'>@item.Quantity</span>
+        </td>
+        <td>
+            <button onclick="minusCount(this)" itemid="@item.ProductID" class="btn btn-danger"><i class="fa fa-minus"></i></button> 
+            <button onclick="plusCount(this)" itemid="@item.ProductID" class="btn btn-success"><i class="fa fa-plus"></i></button>
+        </td>
+        <td>
+            <span id='@("totalprc"+item.ProductID)'>@item.TotalPrice</span>
+        </td>
+    </tr>
+}
+<tr>
+    <td colspan="4" class="text-center"><b>Total</b>
+    </td>
+    <td>
+        <b><span id="totalsemuaharga">@ViewBag.totalharga</span></b>
+    </td>
+</tr>
